@@ -48,6 +48,7 @@ int partition(int *array, int low, int high)
     int pivot = array[high];
     int i = low - 1;
     int j;
+    size_t size;
 
     for (j = low; j <= high - 1; j++)
     {
@@ -55,7 +56,7 @@ int partition(int *array, int low, int high)
         {
             i++;
             swap(&array[i], &array[j]);
-            print_array(array, high - low + 1);
+            print_array(array, size);
         }
     }
     swap(&array[i + 1], &array[high]);
